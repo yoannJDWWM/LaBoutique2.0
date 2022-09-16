@@ -3,30 +3,59 @@
 {% block title %}Mes Commandes - La boutique{% endblock %}
 
 {% block content %}
-    <h1> Mes Commandes </h1>
-        Bienvenue {{app.user.firstname}} dans votre compte.<br/> C'est dans cet espace que vous allez pouvoir consulter vos commandes.<br/>
-    <a href=" {{ path('account') }}"> Retour</a>
-    {% if app.user.orders | length == 0 %}
-    <hr>
-        <p class="text-center">
-            Vous n'avez pas encore passé de commande sur La Boutique.
-        </p>   
-    {% else %}
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Référence</th>
-      <th scope="col">Passé le</th
-      <th scope="col">Produit(s)</th>
-      <th scope="col">Total</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
+		<h2 class="ltext-105 cl0 txt-center">
+			Mon compte
+		</h2>
+	</section>	
+
+<section class="bg0 p-t-104 ">
+<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Mes Commandes 
+						</h3>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <small class="stext-113 cl6 p-b-26"> <a href="{{path('admin')}}"> Vous êtes administrateur ? accéder au backoffice ?</a></small></br/>
+                        {% endif %}
+
+						<p class=" cl6 p-b-26">
+        Bienvenue {{app.user.firstname}} dans votre compte.<br/> C'est dans cet espace que vous allez pouvoir consulter vos commandes.<br/><br/>
+        
+                            <a href=" {{ path('account') }}" class="btn btn-info btn-sm float-left "> Retour</a>
+                            <a href="{{ path ('account_address_add') }}" class="btn btn-info btn-sm"> La Boutique </a>.</a>
+						</p>
+
+					</div>
+                    </section>
+				
+
+
+
+<hr>
+  
+  
+    <div class="wrap-table-shopping-cart">
+    <table class="table-shopping-cart">
+  
+								<tr class="table_head ">
+								 <th scope="column-1">Référence</th>
+      <th class="text-center" scope="column-2">Passé le</th>
+      <th class="text-center" scope="column-3">Produit(s)</th>
+      <th class="text-center" scope="column-4">Total</th>
+      <th class="text-center" scope="column-5">Total</th>
+      <th class="text-center" scope="column-6"></th>
+								</tr>
+
+  {% if app.user.orders | length > 0 %}
   {% for order in orders %}
-    <tr>
-      <td <span class="badge badge-secondary">{{ order.reference }}</span></td>
-      <td> 
+
+								<tr class="table_row">
+									<td class="column-1 text-center">										
+											<p class="badge badge-secondary">45467576</p>								
+									</td >
+<td class="text-center column-2" style=""> 
           {% if order.state ==1 %}
             Paiement accepté
           {% elseif order.state ==2 %}
@@ -35,18 +64,42 @@
            Livraison en cours
           {% endif %}
       </td>
+      </td>
+      <td class="column-3 text-center">
       {{ order.createdAt |date('d/m/Y') }}</td>
-      <td>{{ order.orderDetails|length }}</td>
-      <td>{{ ((order.carrierPrice + order.getTotals) /100) |number_format(2, ', ','.') }} €</td>
-      <td class="text-right"><a href="{{path('account_order_show', {'reference' : order.reference})}}">voir ma commande</a></td>
-    </tr>
+            <td class="column-4 text-center">{{ order.orderDetails|length }}</td>
+                  <td class="column-5 text-center">{{ ((order.carrierPrice + order.getTotals) /100) |number_format(2, ', ','.') }} €</td>
+                        <td class="text-center column-6"><a href="{{path('account_order_show', {'reference' : order.reference})}}">voir ma commande</a></td>
+
+
+
+
+
+								</tr>
+
+           
+
+            
+
      {% endfor %}
-  </tbody>
-</table>
+ 
+     
+{% else %}
+
+	            <tr class="table_row">
+									<td class="column-1 text-center " colspan="6">										
+											<p class="badge badge-secondary">45467576</p>								
+									</td >
+              </tr>
+             
+
+
         
            
        
     
     {% endif %}
+    </table>
+    </div>
 
 {% endblock %}

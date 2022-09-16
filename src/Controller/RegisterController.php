@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Classe\Mail;
+use App\Classes\Mail;
 use App\Entity\User;
 use App\Form\RegisterType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -69,7 +69,7 @@ class RegisterController extends AbstractController
 
         return $this->render('register/index.html.twig',[
             'form' => $form->createView(),
-            'notification' => $notification
+            'notification' => $notification,
         ]);
     }
 }

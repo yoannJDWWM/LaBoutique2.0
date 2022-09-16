@@ -25,7 +25,8 @@ class RegisterType extends AbstractType
                     'max' => 30  
                   ]),
                 'attr' => [
-                    'placeholder' =>'Saisissez votre prénom'
+                    'placeholder' =>'Saisissez votre prénom',
+                    'class' =>'stext-111 cl2 plh3 size-116 p-l-62 p-r-30'
                 ]
             ])
             ->add('lastname', TextType::class,[
@@ -35,7 +36,8 @@ class RegisterType extends AbstractType
                     'max' => 30  
                   ]),
                 'attr' => [
-                    'placeholder' =>'Saisissez votre nom'
+                    'placeholder' =>'Saisissez votre nom',
+                    'class' =>'stext-111 cl2 plh3 size-116 p-l-62 p-r-30'
                 ]
             ])
             ->add('email', EmailType::class,[
@@ -45,7 +47,8 @@ class RegisterType extends AbstractType
                   'max' => 55  
                 ]),
                 'attr' => [
-                    'placeholder' =>'Saisissez votre email'
+                    'placeholder' =>'Saisissez votre email',
+                    'class' =>'stext-111 cl2 plh3 size-116 p-l-62 p-r-30'
                 ]
             ])
             ->add('password', RepeatedType::class,[
@@ -59,18 +62,23 @@ class RegisterType extends AbstractType
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe',
                 'attr' =>[
-                    'placeholder' => 'merci de saisir votre mot de passe'
+                    'placeholder' => 'merci de saisir votre mot de passe',
+                    'class' =>'stext-111 cl2 plh3 size-116 p-l-62 p-r-30'
                 ]
             ],
                 'second_options' => ['label' => 'Confirmer votre mot de passe',
                 'attr' =>[
-                    'placeholder' => 'merci de confirmer votre mot de passe'
+                    'placeholder' => 'merci de confirmer votre mot de passe',
+                    'class' =>'stext-111 cl2 plh3 size-116 p-l-62 p-r-30'
                 ]
                 ]
             ])
            
             ->add('submit', SubmitType::class,[
-                'label' => "S'inscrire"
+                'label' => "S'inscrire",
+                'attr' => [
+                    'class' => 'flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer'
+                    ]
             ])
         ;
     }

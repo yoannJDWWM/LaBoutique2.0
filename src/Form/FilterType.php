@@ -23,28 +23,32 @@ class FilterType extends AbstractType
             'required' => false,
             'attr' =>[
                 'placeholder' =>'Votre recherche...',
-                'class' => 'form-control-sm'
+                'class' => 'mtext-107 cl2 size-114 plh2 p-r-15'
             ]
-            ])
+            ]);
+            
 
-        ->add('categories', EntityType::class,[
-                'label' => false,
-                'required' => false,
-                'class' => Category::class,
-                'multiple' => true,
-                'expanded' => true
+        // ->add('categories', EntityType::class,[
+        //         'label' => false,
+        //         'required' => false,
+        //         'class' => Category::class,
+        //         'multiple' => true,
+        //         'expanded' => true
 
-                ])
+        //         ])
 
-        ->add('submit', SubmitType::class,[
-            'label' => 'filtrer',
-            'attr' => ['class' => 'btn-block btn-primary']
-        ]);
+        // ->add('submit', SubmitType::class,[
+        //     'label' => 'filtrer',
+        //     'attr' => ['class' => 'btn-block btn-primary']
+        // ]);
+        
     }
+
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Filter::class,
+            'id' => 'filterform',
             'method' => 'GET',
             'crsf_protection' => false,
         ]);

@@ -3,11 +3,39 @@
 {% block title %}Erreur de paiement - La boutique Francaise{% endblock %}
 
 {% block content %}
-    <h2>Erreur de paiement</h2>
-    <p>
-        bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/><br/>
+
+<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
+		<h2 class="ltext-105 cl0 txt-center">
+			Ma commande
+		</h2>
+	</section>
+
+
+    <section class="bg0 p-t-104 ">
+<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+						<h3 class="mtext-111 cl2 p-b-16">
+							Erreur de paiement
+						</h3>
+
+                        
+
+						<p class="stext-113 cl6 p-b-26">
+                               bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/><br/>
         il semblerait que le paiement pour votre commande n°<strong>{{ order.reference }} est échoué</strong>
-        Un rapport d'erreur vient de vous être envoyéé par email à l'adresse <strong> {{ order.user.email }}</strong>
-        <a class="btn btn-success" href=" {{ path('order') }}"> réessayer le paiement </a>
+        <a class="btn btn-success" href=" {{ path('order') }}"> réessayer le paiement </a></strong>
+        <hr>
+        <p class="stext-113 cl6 p-b-26">         Un rapport d'erreur vient de vous être envoyéé par email à l'adresse <strong> {{ order.user.email }}</strong>
+ <br/>
+      
+       
+         <p class="stext-113 cl6 p-b-26"> Pour réessayer, rendez-vous à votre <a href=" {{ path('cart') }}"> Panier </a>
+						</p>
+
+					</div>
+                    </section>
+    
+  
+    <p>
+     
     </p>
 {% endblock %}

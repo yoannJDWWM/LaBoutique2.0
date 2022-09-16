@@ -21,23 +21,31 @@ class ProductRepository extends ServiceEntityRepository
      * @return Product[]
      */
 
-    public function findFromFilter(Filter $filter){
+    public function findFromFilter($filter){
+
         $query = $this
         ->createQueryBuilder('p')
         ->select('c', 'p')
         ->join( 'p.category',  'c');
 
-        if(!empty($filter->categories)) {
+        if(!empty($filter['categories'])) {
             $query = $query
-            ->andWhere('c.id IN (:categories)')
-            ->setParameter('categories', $filter->categories);
+            ->andWhere('c.name LIKE :categories')
+            ->setParameter('categories', "%{$filter['categories']}%");
         }
 
-        if(!empty($filter->string)){
+        if(!empty($filter['search'])){
            $query = $query
                 ->andWhere('p.name LIKE :string') 
-                ->setParameter('string', "%{$filter->string}%");
+                ->setParameter('string', "%{$filter['search']}%");
         }
+
+        if(!empty($filter['sort'])){
+            $query = $query
+                 ->andWhere('p.name LIKE :sort') 
+                 ->setParameter('sort', "%{$filter['sort']}%");
+         }
+
         return $query->getQuery()->getResult();
     }
 
