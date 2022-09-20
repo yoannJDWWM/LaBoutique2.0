@@ -25,7 +25,7 @@ class HomeController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/', name: 'defaultsite')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
        
