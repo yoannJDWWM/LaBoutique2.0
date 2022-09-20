@@ -25,13 +25,13 @@ class HomeController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/defaultsite', name: 'home')]
+
+
+
+    #[Route('/defaultsite', name: 'index')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
-       
-        
-
-     
 
         $categories = $this->entityManager->getRepository(Category::class)->findAll();
         $headers = $this->entityManager->getRepository(Header::class)->findAll();
