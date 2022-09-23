@@ -1,124 +1,109 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon compte - La boutique{% endblock %}
+{% block title %}Mon compte - La boutique
+{% endblock %}
 
 {% block content %}
 
-<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
 		<h2 class="ltext-105 cl0 txt-center">
 			Mon compte
 		</h2>
-	</section>	
+	</section>
 
-<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Accueil
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Accueil
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<a href="{{ path('products') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Shop
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+		<a href="{{ path('products') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Shop
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<span class="stext-109 cl4">
-				Notre histoire
-			</span>
+		<span class="stext-109 cl4">
+			Notre histoire
+		</span>
+	</div>
+
+	<section class=" m-t-50 m-b-80">
+
+
+		<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+			<h3 class="mtext-111 cl2 p-b-16">
+				Mon compte
+			</h3>
+
+			{% if is_granted('ROLE_ADMIN') %}
+				<small class="stext-113 cl6 p-b-26">
+					<a href="{{path('admin')}}">
+						Vous êtes administrateur ? accéder au backoffice ?</a>
+				</small>
+			</br/>
+		{% endif %}
+
+		<p class="stext-113 cl6 p-b-26">
+			Bienvenue
+			{{app.user.firstname}}
+			dans votre compte.<br/>
+			C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
+		</p>
+
+	</div>
+
+
+	<hr>
+
+
+	<div class="flex flex-center">
+
+
+		<div class="card flex" style="width: 18rem;">
+			<a href="{{path('account_password')}}">
+				<div class="card-header text-center">
+					<h5 class="stext-113">
+						Modifier mon mot de passe</h5>
+				</div>
+				<div class="card-body">
+					<div class=" text-center">
+						<img src="{{ asset('assets/img/lock.png') }}" style="max-width:50px;max-height:50px" alt="Modifier mon mot de passe">
+
+					</br/>
+				</div>
+			</div>
+		</a>
+	</div>
+
+
+	<div class="card" style="width: 18rem;">
+		<a href="{{path('account_address')}}">
+			<div class="card-header text-center">
+				<h5 class="stext-113">
+					Gérer mes adresses</h5>
+			</div>
+			<div class="card-body">
+				<div class=" text-center">
+					<img src="{{ asset('assets/img/location-pin.png') }}" style="max-width:50px;max-height:50px" alt="Gérer mes adresses">
+				</br/>
+			</div>
 		</div>
-
-<section class=" m-t-50 m-b-80">
-
-
-		
-		
-
-<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
-						<h3 class="mtext-111 cl2 p-b-16">
-							Mon compte 
-						</h3>
-
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <small class="stext-113 cl6 p-b-26"> <a href="{{path('admin')}}"> Vous êtes administrateur ? accéder au backoffice ?</a></small></br/>
-                        {% endif %}
-
-						<p class="stext-113 cl6 p-b-26">
-                        Bienvenue {{app.user.firstname}} dans votre compte.<br/> C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
-						</p>
-
-					</div>
-				
+	</div>
 
 
-<hr>
+	<div class="card" style="width: 18rem;">
+		<a href="{{path('account_order')}}">
 
+			<div class="card-header text-center">
+				<h5 class="stext-113">
+					Gérer mes commandes</h5>
+			</div>
+			<div class="card-body">
+				<div class=" text-center">
+					<img src="{{ asset('assets/img/purchase.png') }}" style="max-width:50px;max-height:50px" alt="gérer mes adresses">
+				</br/>
+			</div>
+		</div>
+	</a>
+</div></a><div></section>{% endblock %}
 
-
-
-<div class="flex flex-center">
-
-
-
-
-    <div class="card flex" style="width: 18rem;">
-    <a href="{{path('account_password')}}">
-        <div class="card-header text-center">
-            <h5 class="stext-113"> Modifier mon mot de passe</h5>
-        </div>
-        <div class="card-body">
-            <div class=" text-center">
-                <img src="{{ asset('assets/img/lock.png') }}"style ="max-width:50px;max-height:50px" alt="Modifier mon mot de passe">
-                
-                </br/>
-            </div>
-        </div>
-        </a>
-    </div>
-
-
-
-
-
-    <div class="card" style="width: 18rem;">
-    <a href="{{path('account_address')}}">
-        <div class="card-header text-center">
-            <h5 class="stext-113"> Gérer mes adresses</h5>
-        </div>
-        <div class="card-body">
-            <div class=" text-center">
-                <img src="{{ asset('assets/img/location-pin.png') }}"style ="max-width:50px;max-height:50px" alt="Gérer mes adresses">
-                </br/>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-    <div class="card" style="width: 18rem;">
-                <a href="{{path('account_order')}}">
-
-        <div class="card-header text-center">
-                    <h5 class="stext-113"> Gérer mes commandes</h5>
-                </div>
-        <div class="card-body">
-            <div class=" text-center">
-                        <img src="{{ asset('assets/img/purchase.png') }}"style ="max-width:50px;max-height:50px" alt="gérer mes adresses">
-                </br/>
-            </div>
-        </div>
-        </a>
-    </div>
-
-</a>
-
-<div>
-    
-    
-
-    
-    
-    
-
-</section>
-{% endblock %}

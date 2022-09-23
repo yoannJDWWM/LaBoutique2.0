@@ -39,6 +39,7 @@ class Product
     #[ORM\Column]
     private ?bool $isBest = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -139,4 +140,6 @@ class Product
 
         return $this;
     }
+
+   
 }

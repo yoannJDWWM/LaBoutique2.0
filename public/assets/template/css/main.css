@@ -198,7 +198,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
 
-.container-menu-desktop {
+/* .container-menu-desktop {
   height: auto;
   width: 100%;
   position: relative;
@@ -218,7 +218,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .header-v4 .container-menu-desktop {
   height: 124px;
-}
+} */
 
 
 /*==================================================================
@@ -3299,6 +3299,11 @@ input.num-product::-webkit-inner-spin-button {
     padding-left: 60px;
   }
 
+  .col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
   
 }
 
@@ -3328,5 +3333,9 @@ input.num-product::-webkit-inner-spin-button {
   .respon3 {
     padding: 20px;
   }
-
+  .col-md-3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }

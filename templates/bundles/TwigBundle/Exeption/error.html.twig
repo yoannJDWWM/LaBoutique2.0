@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page Introuvable - La boutique{% endblock %}
+{% block title %}Page Introuvable - La boutique
+{% endblock %}
 
 {% block content %}
-<div class="block-small">
-<h2>Page intoruvable </h2>
-<p>Désolé , cette page ne semble pas accessible pour le moment.</p>
-<a href="{{ path('home')}}" class="btn btn-info">Revenir à l'acceuil</a>
+	<div class="block-small">
+		<h2>Page intoruvable
+		</h2>
+		<p>Désolé , cette page ne semble pas accessible pour le moment.</p>
+		<a href="{{ path('home')}}" class="btn btn-info">Revenir à l'acceuil</a>
 
-</div>
+	</div>
 {% endblock %}
+

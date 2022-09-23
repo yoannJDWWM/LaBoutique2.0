@@ -1,49 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Confirmation de commande - La boutique Francaise{% endblock %}
+{% block title %}Confirmation de commande - La boutique Francaise
+{% endblock %}
 
 {% block content %}
 
-<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
 		<h2 class="ltext-105 cl0 txt-center">
 			Ma commande
 		</h2>
 	</section>
 
-    <section class="bg0 p-t-104 ">
-<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
-						<h3 class="mtext-111 cl2 p-b-16">
-							confirmation de commande
-						</h3>
+	<section class="bg0 p-t-104 ">
+		<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+			<h3 class="mtext-111 cl2 p-b-16">
+				confirmation de commande
+			</h3>
 
-                        
 
-						<p class="stext-113 cl6 p-b-26">
-                              bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/>
-        Nous vous remercions pour votre commande n°<strong>{{ order.reference }}</strong>
-        Un confirmation vient de vous être envoyéé par email à l'adresse <strong> {{ order.user.email }}</strong>
-        <hr>
-        <p class="stext-113 cl6 p-b-26"> Votre commande sera livrée par <strong> {{ order.carrierName }}</strong> à ladresse suivante : <br/>
-        <div class="card" style="width: 18rem;">
-                         <div class="card-body">
-                            
-                            <p class="card-text stext-113">
-                             {{ order.delivery | raw }} </p>
-                            </p>
-                        </div>
-                </div></br>
-       
-         <p class="stext-113 cl6 p-b-26"> Pour suivre votre commande, rendez-vous dans votre <a href=" {{ path('account_order') }}"> compte </a>
+			<p class="stext-113 cl6 p-b-26">
+				bonjour
+				<strong>{{ order.user.firstname }}
+					{{ order.user.lastname }}</strong>,<br/>
+				Nous vous remercions pour votre commande n°<strong>{{ order.reference }}</strong>
+				Un confirmation vient de vous être envoyéé par email à l'adresse
+				<strong>
+					{{ order.user.email }}</strong><hr>
+			</p>
+			<p class="stext-113 cl6 p-b-26">
+				Votre commande sera livrée par
+				<strong>
+					{{ order.carrierName }}</strong>
+				à ladresse suivante :
+				<br/>
+				<div class="card" style="width: 18rem;">
+					<div class="card-body">
+
+						<p class="card-text stext-113">
+							{{ order.delivery | raw }}
 						</p>
+					</p>
+				</div>
+			</p>
+		</div>
+	</br>
 
-					</div>
-                    </section>
-				
-       
-    <hr>
-    
-    <h2></h2>
+	<p class="stext-113 cl6 p-b-26">
+		Pour suivre votre commande, rendez-vous dans votre
+		<a href=" {{ path('account_order') }}">
+			compte
+		</a>
+	</p>
 
-    
+</div></section><hr>
 
-{% endblock %}
+<h2></h2>{% endblock %}
+

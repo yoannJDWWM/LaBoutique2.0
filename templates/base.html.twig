@@ -1,243 +1,244 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="La boutique qui vend uniquement du made in France! ">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.1.1">
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
-         default-src *; 
-         style-src 'self'  'unsafe-inline'; 
-         script-src * 'self' https://checkout.stripe.com 'unsafe-inline'; 
-         connect-src  * 'self' https://checkout.stripe.com  ; 
-         frame-src * 'self'  https://checkout.stripe.com ; "
-    />
-
-    <title>{% block title%} La Boutique Francaise - 100% made in France{% endblock%}</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-     <!--====================================================================-->
-    <link rel="stylesheet" href="{{ asset('assets/css/boutique.css') }}">
-
-    <!-- Template core CSS -->
-	<link rel="icon" type="image/png" href="{{ asset('assets/template/images/icons/favicon.png') }}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/bootstrap/css/bootstrap.min.css') }}">
-    	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/bootstrap/css/bootstrap.min.css.map') }}">
-
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/iconic/css/material-design-iconic-font.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/linearicons-v1.0.0/icon-font.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/animate/animate.css') }}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/css-hamburgers/hamburgers.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/animsition/css/animsition.min.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/select2/select2.min.css') }}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/daterangepicker/daterangepicker.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/slick/slick.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/MagnificPopup/magnific-popup.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/css/util.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/css/main.css') }}">
-    {% block javascript %}
-    {% endblock %}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="La boutique qui vend uniquement du made in France! ">
+		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+		<meta name="generator" content="Jekyll v4.1.1">
+		<meta http-equiv="Content-Security-Policy" content="
+						         default-src *;
+						         style-src 'self'  'unsafe-inline';
+						         script-src * 'self' https://checkout.stripe.com 'unsafe-inline';
+						         connect-src  * 'self' https://checkout.stripe.com  ;
+						         frame-src * 'self'  https://checkout.stripe.com ; "/>
 
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+		<title>{% block title%}La Boutique Francaise - 100% made in France{% endblock%}</title>
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="{{asset('assets/css/carousel.css')}}" rel="stylesheet" type="text/css">
-</head>
-<body style="margin : 0px; padding : 0px;">
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+		<!--====================================================================-->
+		<link rel="stylesheet" href="{{ asset('assets/css/boutique.css') }}">
 
+		<!-- Template core CSS -->
+		<link rel="icon" type="image/png" href="{{ asset('assets/template/images/icons/favicon.png') }}"/>
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/bootstrap/css/bootstrap.min.css') }}">
 
-
-			
-<header>
-		<!-- Header desktop -->
-		<div style:"" class="container-menu-desktop fix-menu-desktop ">
-			<!-- Topbar -->
-			
-
-			<div class="wrap-menu-desktop" style="top: 0px;">
-				<nav class="limiter-menu-desktop container">
-					
-					<!-- Logo desktop -->		
-					<a href="{{path('home')}}" class="logo">
-						<img src="{{ asset('assets/template/images/icons/logo-01.png') }}" alt="IMG-LOGO">
-					</a>
-
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li class="">
-								<a href="{{path('home')}}">Acceuil</a>
-								<ul class="sub-menu">
-									<li><a href="{{path('products')}}">Shop</a></li>
-									<li><a href="about.html">A propos</a></li>
-									<li><a href="{{path('products')}}">Contact</a></li>
-								</ul>
-							</li>
-						
-							<li class="">
-								<a href="{{path('products')}}">Shop</a>
-							
-							</li>
-					
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/bootstrap/css/bootstrap.min.css.map') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/fonts/linearicons-v1.0.0/icon-font.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/animate/animate.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/css-hamburgers/hamburgers.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/animsition/css/animsition.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/select2/select2.min.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/daterangepicker/daterangepicker.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/slick/slick.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/MagnificPopup/magnific-popup.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/vendor/perfect-scrollbar/perfect-scrollbar.css') }}">
+		<!--===============================================================================================-->
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/css/util.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/template/css/main.css') }}">
 
 
-							
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
 
-							<li>
-								<a href="{{path('about')}}">A propos</a>
-							</li>
+			@media(min-width: 768px) {
+				.bd-placeholder-img-lg {
+					font-size: 3.5rem;
+				}
+			}
+		</style>
+		<!-- Custom styles for this template -->
+		<link href="{{asset('assets/css/carousel.css')}}" rel="stylesheet" type="text/css">
+	</head>
+	<body style="margin : 0px; padding : 0px;">
 
-							<li>
-								<a href="{{ path('contact') }}">Contact</a>
-							</li>
-						</ul>
-					</div>	
 
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div> -->
+		<header>
+			<!-- Header desktop -->
+			<div
+				style:"" class="container-menu-desktop fix-menu-desktop">
+				<!-- Topbar -->
+
+
+				<div class="wrap-menu-desktop" style="top: 0px;">
+					<nav
+						class="limiter-menu-desktop container">
+
+						<!-- Logo desktop -->
+						<a href="{{path('home')}}" class="logo">
+							<img src="{{ asset('assets/template/images/icons/logo-01.png') }}" alt="IMG-LOGO">
+						</a>
+
+						<!-- Menu desktop -->
 						<div class="menu-desktop">
-						<ul class="main-menu">
-							<li >
-						{% if app.user %}
-						<a style="" href="{{ path('account') }}" class="">Mon compte <small>({{ app.user.firstname }})</small></a></li> <li> <a href="{{ path('app_logout') }}" class="">Deconnexion</a></li>
-						{% else %}
-						<li><a href="{{ path('app_login')}} " class="">Connexion</a></li>  <li><a href="{{ path('register') }}" class="">Inscription</a></li> 
-						{% endif %}
-						
-						</li>
-<li>
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart" data-notify="2">
-							<a href="{{path ('cart') }}" >
+							<ul class="main-menu">
+								<li class="">
+									<a href="{{path('home')}}">Acceuil</a>
+									<ul class="sub-menu">
+										<li>
+											<a href="{{path('products')}}">Shop</a>
+										</li>
+										<li>
+											<a href="about.html">A propos</a>
+										</li>
+										<li>
+											<a href="{{path('products')}}">Contact</a>
+										</li>
+									</ul>
+								</li>
+
+								<li class="">
+									<a href="{{path('products')}}">Shop</a>
+
+								</li>
+
+
+								<li>
+									<a href="{{path('about')}}">A propos</a>
+								</li>
+
+								<li>
+									<a href="{{ path('contact') }}">Contact</a>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Icon header -->
+
+						<div class="wrap-icon-header flex-w flex-r-m">
+							<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 ">
+								<ul class="main-menu">
+									<li>
+										<i class="zmdi zmdi-account"></i>
+										<ul class="sub-menu">
+											{% if app.user %}
+												<li>
+													<a href="{{path('account')}}">Mon compte
+														<small>({{ app.user.firstname }})</small>
+													</a>
+												</li>
+												<li>
+													<a href="{{path('app_logout') }}" class="">Deconnexion</a>
+												</li>
+											{% else %}
+												<li>
+													<a href="{{path('app_login')}}">Connexion</a>
+												</li>
+												<li>
+													<a href="{{path('register') }}" class="">Inscription</a>
+												</li>
+											{% endif %}
+										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<a href="{{path ('cart') }}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " data-notify="2">
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</a>
+
 						</div>
-						</li>
-						</ul>
-					</div>
-				</nav>
-			</div>	
-		</div>
-		</div>
 
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->		
-			<div class="logo-mobile">
-				<a href="index.html"><img src="{{ asset('assets/template/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
+					</nav>
+
+				</div>
 			</div>
-
-			<!-- Icon header -->
-				<div class="menu-desktop">
-						<ul class="main-menu">
-							<li >
-						{% if app.user %}
-						<a style="" href="{{ path('account') }}" class="">Mon compte <small>({{ app.user.firstname }})</small></a></li> <li> <a href="{{ path('app_logout') }}" class="">Deconnexion</a></li>
-						{% else %}
-						<li><a href="{{ path('app_login')}} " class="">Connexion</a></li>  <li><a href="{{ path('register') }}" class="">Inscription</a></li> 
-						{% endif %}
-						
-						</li>
-<li>
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 " data-notify="2">
-							<a href="{{path ('cart') }}" >
-								<i class="zmdi zmdi-shopping-cart"></i>
-							</a>
+		
+			<!-- Header Mobile -->
+			<div class="wrap-header-mobile"><!-- Logo moblie -->
+				<div class="logo-mobile">
+					<a href="{{path('home')}}"><img src="{{ asset('assets/template/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
+					</div><!-- Icon header -->
+						<div class="menu-desktop">
+							<ul class="main-menu">
+								<li>
+									<div class="">
+										<a href="{{path ('cart') }}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+											<i class="zmdi zmdi-shopping-cart"></i>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div><!-- Button show menu -->
+						<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span>
 						</div>
-						</li>
+					</div><!-- Menu Mobile --><div class="menu-mobile"><ul class="main-menu-m">
+					<li class="">
+						<a href="{{path('home')}}">Acceuil</a>
+						<ul class="sub-menu-m">
+							<li><ahref="{{path('products')}}">Shop</a></li>
+							<li><ahref="{{path('about')}}">A propos</a></li>
+							<li><ahref="{{path('contact')}}">Contact</a></li>
 						</ul>
-					</div>
-
-
-
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
+						<span class="arrow-main-menu-m">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</span>
+					</li>
+					<li>
+						<a href="{{path('products')}}">Shop</a>
+					</li>
+					<li>
+						<a href="{{ path('about') }}">A propos</a>
+					</li>
+					<li class="">
+						<a href="{{path('account')}}">Mon compte</a>
+						<ul class="sub-menu-m">
+							{% if app.user %}
+								<li>
+									<a href="{{path('account')}}">Mon compte
+										<small>({{ app.user.firstname }})</small>
+									</a>
+								</li>
+								<li>
+									<a href="{{path('app_logout') }}" class="">Deconnexion</a>
+								</li>
+							{% else %}
+								<li>
+									<a href="{{path('app_login')}}">Connexion</a>
+								</li>
+								<li>
+									<a href="{{path('register') }}" class="">Inscription</a>
+								</li>
+							{% endif %}
+						</ul>
+					<span class="arrow-main-menu-m">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</span>
+				</li>
 			</div>
-		</div>
+		</header>
 
-
-		<!-- Menu Mobile -->
-		<div class="menu-mobile">
-			
-
-			<ul class="main-menu-m">
-				<li class="">
-					<a href="{{path('home')}}">Acceuil</a>
-					<ul class="sub-menu">
-						<li><a href="{{path('products')}}">Shop</a></li>
-						<li><a href="{{path('about')}}">A propos</a></li>
-						<li><a href="{{path('products')}}">Contact</a></li>
-					</ul>
-				</li>
-
-				<li>
-					<a href="{{path('products')}}">Shop</a>
-				</li>
-
-
-				
-
-				<li>
-					<a href="{{ path('about') }}">A propos</a>
-				</li>
-
-				<li>
-					<a href="{{ path('contact') }}">Contact</a>
-				</li>
-				
-			</ul>
-		</div>
-
-    
-</header>
-
-<main style:"padding-top : 0px" role="main">
- {% if block('carousel') is defined %}
-
- <!-- Slider -->
-	<section class="section-slide">
+			{% if block('carousel') is defined %}
+		<section class="section-slide">
 		<div class="wrap-slick1">
-			<div class="slick1">				
-				{% for key, header in headers %}
+			<div class="slick1">
+			{% for key, header in headers %}
 				<div class="item-slick1 {% if key == 0 %} active {% endif %}" style="background-image: url('/uploads/{{ header.illustration }}');">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -252,207 +253,198 @@
 									{{ header.content }}
 								</h2>
 							</div>
-								
+								60
 							<div class="layer-slick1 animated visible-false" data-appear="fadeIn" data-delay="0">
 								<a href="{{ header.btnUrl }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
+									Découvrir
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
-				{% endfor %}	
-						
+			{% endfor %}
 			</div>
 		</div>
 	</section>
-   
-   <!-- Banner -->
-	<div class="sec-banner bg0 p-t-80 p-b-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="assets/template/images/banner-01.jpg" alt="IMG-BANNER">
+	{% endif %}
 
-						<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
-								</span>
+		
+			
+<!-- Banner -->
+			<section>
+				<div class="sec-banner bg0 p-t-80 p-b-50">
+					<div class="container">
+						<div class="row">
+							<div
+								class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+								<!-- Block1 -->
+								<div class="block1 wrap-pic-w">
+									<img src="assets/template/images/banner-01.jpg" alt="IMG-BANNER">
 
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
-							</div>
+									<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+										<div class="block1-txt-child1 flex-col-l">
+											<span class="block1-name ltext-102 trans-04 p-b-8">
+												Femme
+											</span>
 
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+											<span class="block1-info stext-102 trans-04"></span>
+										</div>
+
+										<div class="block1-txt-child2 p-b-4 trans-05">
+											<div class="block1-link stext-101 cl0 trans-09">
+												Découvrir
+											</div>
+										</div>
+									</a>
 								</div>
 							</div>
-						</a>
-					</div>
-				</div>
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="assets/template/images/banner-02.jpg" alt="IMG-BANNER">
+							<div
+								class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+								<!-- Block1 -->
+								<div class="block1 wrap-pic-w">
+									<img src="assets/template/images/banner-02.jpg" alt="IMG-BANNER">
 
-						<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
-								</span>
+									<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+										<div class="block1-txt-child1 flex-col-l">
+											<span class="block1-name ltext-102 trans-04 p-b-8">
+												Homme
+											</span>
 
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
-							</div>
+											<span class="block1-info stext-102 trans-04"></span>
+										</div>
 
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+										<div class="block1-txt-child2 p-b-4 trans-05">
+											<div class="block1-link stext-101 cl0 trans-09">
+												Découvrir
+											</div>
+										</div>
+									</a>
 								</div>
 							</div>
-						</a>
-					</div>
-				</div>
+							<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+								<!-- Block1 -->
+								<div class="block1 wrap-pic-w">
+									<img src="assets/template/images/banner-03.jpg" alt="IMG-BANNER">
+									<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+										<div class="block1-txt-child1 flex-col-l">
+											<span class="block1-name ltext-102 trans-04 p-b-8">
+												Accessoires
+											</span>
+										</div>
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="assets/template/images/banner-03.jpg" alt="IMG-BANNER">
-
-						<a href="{{path('products')}}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+										<div class="block1-txt-child2 p-b-4 trans-05">
+											<div class="block1-link stext-101 cl0 trans-09">
+											Découvrir
+											</div>
+										</div>
+									</a>
 								</div>
 							</div>
-						</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-
-{% endif %}
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}">  
-      {% block content %}{% endblock %} 
-    </div><!-- /.container -->
+	
+				<!-- Marketing messaging and featurettes================================================= -->
+				<!-- Wrap the rest of the page in another container to center all the content. -->
+				<div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}"> {% block content %}{% endblock %}
+			</section>
+			
 
 
+			<!-- FOOTER -->
+			<!-- Footer -->
+			<footer class="bg3 p-t-75 p-b-32">
+				<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Catégories
+						</h4>
 
+						<ul>
 
-    <!-- FOOTER -->
-<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
+							<li class="p-b-10">
+								<a href="{{ path('products') }}" class="stext-107 cl7 hov-cl1 trans-04">
+									Femme
+								</a>
+							</li>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
+							<li class="p-b-10">
+								<a href="{{ path('products') }}" class="stext-107 cl7 hov-cl1 trans-04">
+									Homme
+								</a>
+							</li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
+							<li class="p-b-10">
+								<a href="{{ path('products') }}" class="stext-107 cl7 hov-cl1 trans-04">
+									Chaussures
+								</a>
+							</li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
+							<li class="p-b-10">
+								<a href="{{ path('products') }}" class="stext-107 cl7 hov-cl1 trans-04">
+									Montres
+								</a>
+							</li>
+						</ul>
 					</div>
-				</div>
+
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Besion d'Aides
+						</h4>
+
+						<ul>
+							<li class="p-b-10">
+								<a href="{{ path('order') }}" class="stext-107 cl7 hov-cl1 trans-04">
+									Vos Commandes
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Retour
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									Livraison
+								</a>
+							</li>
+
+							<li class="p-b-10">
+								<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+									FAQs
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-sm-6 col-lg-3 p-b-50">
+						<h4 class="stext-301 cl0 p-b-30">
+							Tenez nous informé
+						</h4>
+
+						<p class="stext-107 cl7 size-201">
+							Une question ? vous pouvez nous joindre à tous moment l'adresse client@mail.com ou sur nos réseaux sociaux
+						</p>
+
+						<div class="p-t-27">
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-facebook"></i>
+							</a>
+
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-instagram"></i>
+							</a>
+
+							<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+								<i class="fa fa-pinterest-p"></i>
+							</a>
+						</div>
+					</div>
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
@@ -467,66 +459,85 @@
 
 						<div class="p-t-18">
 							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
+								Abonne-toi !
 							</button>
 						</div>
 					</form>
 				</div>
+		
+
+		<div class="p-t-40 flex-center">
+			<div class="flex-c-m flex-w p-b-18">
+				<a href="#" class="m-all-1">
+					<img src="{{ asset('assets/template/images/icons/icon-pay-01.png') }}" alt="ICON-PAY">
+				</a>
+
+				<a href="#" class="m-all-1">
+					<img src="{{ asset('assets/template/images/icons/icon-pay-02.png') }}" alt="ICON-PAY">
+				</a>
+
+				<a href="#" class="m-all-1">
+					<img src="{{ asset('assets/template/images/icons/icon-pay-03.png') }}" alt="ICON-PAY">
+				</a>
+
+				<a href="#" class="m-all-1">
+					<img src="{{ asset('assets/template/images/icons/icon-pay-04.png') }}" alt="ICON-PAY">
+				</a>
+
+				<a href="#" class="m-all-1">
+					<img src="{{ asset('assets/template/images/icons/icon-pay-05.png') }}" alt="ICON-PAY">
+				</a>
 			</div>
 
-			<div class="p-t-40">
-				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="{{ asset('assets/template/images/icons/icon-pay-01.png') }}" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="{{ asset('assets/template/images/icons/icon-pay-02.png') }}" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="{{ asset('assets/template/images/icons/icon-pay-03.png') }}" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="{{ asset('assets/template/images/icons/icon-pay-04.png') }}" alt="ICON-PAY">
-					</a>
-
-					<a href="#" class="m-all-1">
-						<img src="{{ asset('assets/template/images/icons/icon-pay-05.png') }}" alt="ICON-PAY">
-					</a>
-				</div>
-
-				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-				</p>
-			</div>
+			<p class="stext-107 cl6 txt-center">
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			Copyright &copy;<script>document.write(new Date().getFullYear());</script>All rights reserved | Made with<i class="fa fa-heart-o" aria-hidden="true"></i>by
+				<a href="https://colorlib.com" target="_blank">Colorlib</a>&amp; distributed by
+				<a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</p>
 		</div>
-	</footer>
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
 	</div>
+</footer>
 
 
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+	<span class="symbol-btn-back-to-top">
+		<i class="zmdi zmdi-chevron-up"></i>
+	</span>
+</div>
+<main>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
+	<script src="{{ asset('assets/template/js/bootstrap.bundle.js') }}"></script>
 
+	<script src="{{ asset('assets/template/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 
-</main>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
-<script src="{{ asset('assets/template/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/template/vendor/animsition/js/animsition.min.js') }}"></script>
+			<!--===============================================================================================--><!--===============================================================================================--><script src="{{ asset('assets/template/vendor/bootstrap/js/popper.js') }}"></script><script src="{{ asset('assets/template/vendor/bootstrap/js/bootstrap.min.js') }}"></script><!--===============================================================================================-->
+			<script src="{{ asset('assets/template/vendor/select2/select2.min.js') }}"></script>
+
+			<script>
+				$(".js-select2").each(function () {
+					 $(this).select2({
+						minimumResultsForSearch: 20,
+						dropdownParent: $(this).next('.dropDownSelect2')
+					  });
+					})
+			</script>
+		
+		<!--===============================================================================================-->
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+	<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
+
+<!--===============================================================================================-->	
+	<script src="{{ asset('assets/template/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('assets/template/vendor/animsition/js/animsition.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="{{ asset('assets/template/vendor/vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ asset('assets/template/vendor/bootstrap/js/popper.js') }}"></script>
 	<script src="{{ asset('assets/template/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('assets/template/vendor/select2/select2.min.js') }}"></script>
@@ -550,7 +561,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         $('.parallax100').parallax100();
 	</script>
 <!--===============================================================================================-->
-	<script src="{{ asset('assets/template/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('assets/template/bootstrap.bundle.js') }}"></script>
 	<script>
 		$('.gallery-lb').each(function() { // the containers for all your galleries
 			$(this).magnificPopup({
@@ -604,23 +615,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	
 	</script>
 <!--===============================================================================================-->
-	{# <script src="{{ asset('assets/template/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			$(this).css('position','relative');
-			$(this).css('overflow','hidden');
-			var ps = new PerfectScrollbar(this, {
-				wheelSpeed: 1,
-				scrollingThreshold: 1000,
-				wheelPropagation: false,
-			});
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-	</script> #}
+	
 <!--===============================================================================================-->
 	<script src="{{ asset('assets/template/js/main.js') }}"></script>
-</body>
-</html>

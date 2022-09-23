@@ -1,76 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes Adresses - La boutique{% endblock %}
+{% block title %}Mes Adresses - La boutique
+{% endblock %}
 
 {% block content %}
 
-	<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg" >
+	<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
 		<h2 class="ltext-105 cl0 txt-center">
 			Mon compte
 		</h2>
-	</section>	
+	</section>
 
-    <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Accueil
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Accueil
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<a href="{{ path('products') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Shop
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+		<a href="{{ path('products') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Shop
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<span class="stext-109 cl4">
+		<span class="stext-109 cl4">
+			Mes adresses
+		</span>
+	</div>
+	<section class=" m-t-50 m-b-80">
+		<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+			<h3 class="mtext-111 cl2 p-b-16">
 				Mes adresses
-			</span>
+			</h3>
+
+			{% if is_granted('ROLE_ADMIN') %}
+				<small class="stext-113 cl6 p-b-26">
+					<a href="{{path('admin')}}">
+						Vous êtes administrateur ? accéder au backoffice ?</a>
+				</small>
+			</br/>
+		{% endif %}
+
+		<p class="stext-113 cl6 p-b-26">
+			Bienvenue
+			{{app.user.firstname}}
+			dans votre compte.<br/>
+			C'est dans cet espace que vous allez pouvoir gérer toutes vos adresses.<br/><br/>
+			<a href=" {{ path('account') }}" class="btn btn-info btn-sm float-left ">
+				Retour</a>
+			<a href="{{ path ('account_address_add') }}" class="btn btn-info btn-sm">
+				ajouter une adresses
+			</a>.</p>
+	</a>
+</p></div></section><hr>{% if app.user.addresses | length == 0 %}<p class="text-center stext-113">
+Vous n'avez pas encore ajouté d'adresse dans votre compte client. Pour en ajouter une, veuillez
+<a href="{{ path ('account_address_add') }}">
+	cliquez- ici
+</a></p>{% else %}<div class="row">
+{% for address in app.user.addresses %}
+	<div class="card" style="width: 18rem;">
+		<div class="card-body">
+			<h5 class="card-title stext-113">{{ address.name }}</h5>
+			<p class="card-text stext-113">
+				{{ address.adress }},
+				<br/>
+				{{ address.postal }}
+				-
+				{{ address.city}}
+				-
+				{{ address.country}}
+			</p>
+			<a href=" {{ path('account_adress_edit', {'id' : address.id } )}}" class="stext-113">Modifier</a>
+			|
+			<a href="{{ path('account_adress_delete', {'id' : address.id } )}}" class="stext-113">Supprimer</a>
 		</div>
-<section class=" m-t-50 m-b-80">
-<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
-						<h3 class="mtext-111 cl2 p-b-16">
-							Mes adresses
-						</h3>
+	</div>
+{% endfor %}</div>{% endif %}<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('background-image: url('assets\template\images\bg-01.jpg');"><h2 class="ltext-105 cl0 txt-center">
+Mon compte</h2></section>{% endblock %}
 
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <small class="stext-113 cl6 p-b-26"> <a href="{{path('admin')}}"> Vous êtes administrateur ? accéder au backoffice ?</a></small></br/>
-                        {% endif %}
-
-						<p class="stext-113 cl6 p-b-26">
-                            Bienvenue {{app.user.firstname}} dans votre compte.<br/> C'est dans cet espace que vous allez pouvoir gérer toutes vos adresses.<br/><br/>
-                            <a href=" {{ path('account') }}" class="btn btn-info btn-sm float-left "> Retour</a>
-                            <a href="{{ path ('account_address_add') }}" class="btn btn-info btn-sm"> ajouter une adresses </a>.</a>
-						</p>
-
-					</div>
-                    </section>
-				
-       
-    <hr>
-    {% if app.user.addresses | length == 0 %}
-        <p class="text-center stext-113">
-            Vous n'avez pas encore ajouté d'adresse dans votre compte client. Pour en ajouter une, veuillez <a href="{{ path ('account_address_add') }}"> cliquez- ici </a>
-        </p>   
-    {% else %}
-        <div class="row">
-        {% for address in app.user.addresses %}
-                <div class="card" style="width: 18rem;">
-                         <div class="card-body">
-                            <h5 class="card-title stext-113">{{ address.name }}</h5>
-                            <p class="card-text stext-113">
-                            {{ address.adress }}, <br/>
-                            {{ address.postal }} - {{ address.city}} - {{ address.country}}
-                            </p>
-                            <a href=" {{ path('account_adress_edit', {'id' : address.id } )}}" class="stext-113">Modifier</a> | <a href="{{ path('account_adress_delete', {'id' : address.id } )}}" class="stext-113">Supprimer</a>
-                        </div>
-                </div>
-        {% endfor %}
-        </div>
-    {% endif %}
-
-    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('background-image: url('assets\template\images\bg-01.jpg');">
-		<h2 class="ltext-105 cl0 txt-center">
-			Mon compte
-		</h2>
-	</section>	  
-
-{% endblock %}

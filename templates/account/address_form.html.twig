@@ -1,47 +1,57 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter une adresse - La boutique{% endblock %}
+{% block title %}Ajouter une adresse - La boutique
+{% endblock %}
 
 {% block content %}
 
-<!-- Title page -->
+	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92 backimg">
 		<h2 class="ltext-105 cl0 txt-center">
 			Mon compte
 		</h2>
-	</section>	
+	</section>
 
-    <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Accueil
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+	<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<a href="{{ path('home') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Accueil
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<a href="{{ path('account_address') }}" class="stext-109 cl8 hov-cl1 trans-04">
-				Mes adresses
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-			</a>
+		<a href="{{ path('account_address') }}" class="stext-109 cl8 hov-cl1 trans-04">
+			Mes adresses
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</a>
 
-			<span class="stext-109 cl4">
-				Ajouter une adresse
-			</span>
+		<span class="stext-109 cl4">
+			Ajouter une adresse
+		</span>
+	</div>
+
+
+	<hr>
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="col-md-12">
+			{{ form_row(form.name) }}
 		</div>
-
-
-
-<hr>
-    {{ form_start(form) }}
-        <div class="row">
-            <div class="col-md-12"> {{ form_row(form.name) }} </div>
-            <div class="col-md-6">  {{ form_row(form.firstname) }}</div>
-            <div class="col-md-6">  {{ form_row(form.lastname) }}</div>
-            <div class="col-md-6">  {{ form_row(form.company) }}</div>
-            <div class="col-md-6">  {{ form_row(form.adress) }}</div>
-            <div class="col-md-6">  {{ form_row(form.postal) }}</div>
-            <div class="col-md-6">  {{ form_row(form.city) }}</div>
-            <div class="col-md-6">  {{ form_row(form.country) }}</div>
-            <div class="col-md-6">  {{ form_row(form.phone) }}</div>
-        </div>
-    {{ form_end(form) }}
+		<div class="col-md-6">
+			{{ form_row(form.firstname) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.lastname) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.company) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.adress) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.postal) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.city) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.country) }}</div>
+		<div class="col-md-6">
+			{{ form_row(form.phone) }}</div>
+	</div>
+	{{ form_end(form) }}
 
 {% endblock %}

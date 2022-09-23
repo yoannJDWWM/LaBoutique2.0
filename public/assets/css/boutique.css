@@ -151,3 +151,13 @@ footer{
 .form4{
     display: content!important;
  }
+
+
+@viewport {
+ width: 492px;
+ zoom: 0.5;
+}
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
